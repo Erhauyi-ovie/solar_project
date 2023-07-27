@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: FabTabs(selectedIndex: 0,),
+      home: SplashScreen(),
+      // home: FabTabs(selectedIndex: 0,),
     );
   }
 }
