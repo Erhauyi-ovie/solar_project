@@ -1,58 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:solar_project/screens/drawer/sidemenu.dart';
-import 'package:get/get.dart';
-import 'package:solar_project/screens/activeAreas/button.dart';
 
-class ActiveAreas extends StatefulWidget {
-  const ActiveAreas({Key? key}) : super(key: key);
-
-  @override
-  State<ActiveAreas> createState() => _ActiveAreasState();
-}
-
-class _ActiveAreasState extends State<ActiveAreas> {
+class TentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Sidemenu(),
       appBar: AppBar(
-        backgroundColor: Colors.teal,
-        titleSpacing: 0,
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-              onPressed: () => Scaffold.of(context).openDrawer(),
-              icon: Icon(Icons.menu, size: 29, color: Colors.white),
-            );
-          },
-        ),
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(width: 65),
-            Text(
-              'Active Areas',
-              style: TextStyle(fontSize: 25, color: Colors.white),
-            ),
-          ],
-        ),
-        actions: [
-          Icon(
-            Icons.search,
-            size: 30,
-            color: Colors.white,
-          ),
-          SizedBox(width: 10)
-        ],
+        title: Text('Tent', style:TextStyle(color: Colors.white)),
+        backgroundColor:Colors.teal[700],
       ),
-      body: Stack(
+      body:  Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 65),
-            child: Positioned(
-              child: ButtonWithLineDemo(),
-            ),
-          ),
           Positioned(
             top: 160,
             left: 25,
@@ -176,7 +133,7 @@ class _ActiveAreasState extends State<ActiveAreas> {
             top: 280,
             left: 25,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.tealAccent,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(5),
@@ -242,9 +199,9 @@ class _ActiveAreasState extends State<ActiveAreas> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 150,
+                  height: 140,
                   width: 160,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.tealAccent,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(5),
@@ -259,8 +216,8 @@ class _ActiveAreasState extends State<ActiveAreas> {
                         height: 30,
                       ),
                       Container(
-                        child: Text(
-                          'Tent Area',
+                        child: const Text(
+                          'Seminar Hall',
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -270,7 +227,7 @@ class _ActiveAreasState extends State<ActiveAreas> {
                       Container(
                         child: RichText(
                           text: TextSpan(
-                            text: '35',
+                            text: '2',
                             style: TextStyle(
                               fontSize: 25,
                               color: Colors.teal[700],
@@ -291,7 +248,7 @@ class _ActiveAreasState extends State<ActiveAreas> {
                   width: 10,
                 ),
                 Container(
-                  height: 150,
+                  height: 140,
                   width: 160,
                   decoration: BoxDecoration(
                     color: Colors.tealAccent,
@@ -309,7 +266,7 @@ class _ActiveAreasState extends State<ActiveAreas> {
                       ),
                       Container(
                         child: Text(
-                          'Calvary Arrows',
+                          'ICT',
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
@@ -319,7 +276,112 @@ class _ActiveAreasState extends State<ActiveAreas> {
                       Container(
                         child: RichText(
                           text: TextSpan(
-                            text: '20',
+                            text: '2',
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.teal[700],
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'kwh',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 610,
+            left: 35,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 130,
+                  width: 160,
+                  decoration: const BoxDecoration(
+                    color: Colors.tealAccent,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(5),
+                      topRight: Radius.circular(5),
+                      bottomLeft: Radius.circular(5),
+                      bottomRight: Radius.circular(5),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        child: Text(
+                          'Tent',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        child: RichText(
+                          text: TextSpan(
+                            text: '2',
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.teal[700],
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'kwh',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 130,
+                  width: 160,
+                  decoration: BoxDecoration(
+                    color: Colors.tealAccent,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(5),
+                      topRight: Radius.circular(5),
+                      bottomLeft: Radius.circular(5),
+                      bottomRight: Radius.circular(5),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        child: Text(
+                          'MiniMart',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        child: RichText(
+                          text: TextSpan(
+                            text: '2',
                             style: TextStyle(
                               fontSize: 25,
                               color: Colors.teal[700],
