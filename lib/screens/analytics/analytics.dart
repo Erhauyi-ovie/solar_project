@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:solar_project/screens/drawer/sidemenu.dart';
-import 'package:solar_project/screens/analytics/charts.dart';
 
 class Analytics extends StatefulWidget {
   const Analytics({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class _TeamState extends State<Analytics> {
     return Scaffold(
       drawer: Sidemenu(),
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Color.fromRGBO(39, 167, 231, 1),
         titleSpacing: 0,
         leading: Builder(
           builder: (context) {
@@ -61,7 +60,7 @@ class _TeamState extends State<Analytics> {
                   ),
                   Icon(
                     Icons.cloud_queue,
-                    color: Colors.teal[700],
+                    color: Color.fromRGBO(39, 167, 231, 1),
                   ),
                   SizedBox(
                     width: 116,
@@ -75,7 +74,7 @@ class _TeamState extends State<Analytics> {
                           text: '32',
                           style: TextStyle(
                             fontSize: 24,
-                            color: Colors.teal[700],
+                            color: Color.fromRGBO(39, 167, 231, 1),
                           ),
                           children: [
                             WidgetSpan(
@@ -85,7 +84,7 @@ class _TeamState extends State<Analytics> {
                                   '0',
                                   style: TextStyle(
                                     fontSize: 14,
-                                    color: Colors.teal[700],
+                                    color: Color.fromRGBO(39, 167, 231, 1),
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -94,7 +93,7 @@ class _TeamState extends State<Analytics> {
                             TextSpan(
                                 text: 'C',
                                 style: TextStyle(
-                                  color: Colors.teal[700],
+                                  color: Color.fromRGBO(39, 167, 231, 1),
                                 ))
                           ],
                         ),
@@ -108,7 +107,7 @@ class _TeamState extends State<Analytics> {
                     'Sunny',
                     style: TextStyle(
                       fontSize: 22,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   )
                 ],
@@ -132,7 +131,7 @@ class _TeamState extends State<Analytics> {
                     style: TextStyle(
                       fontSize: 19,
                       fontWeight: FontWeight.bold,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                   SizedBox(
@@ -142,7 +141,7 @@ class _TeamState extends State<Analytics> {
                     'Week',
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                   SizedBox(
@@ -152,7 +151,7 @@ class _TeamState extends State<Analytics> {
                     'Month',
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                   SizedBox(
@@ -162,7 +161,7 @@ class _TeamState extends State<Analytics> {
                     'Year',
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                 ],
@@ -175,7 +174,7 @@ class _TeamState extends State<Analytics> {
             child: Row(
               children: [
                 Container(
-                  color: Colors.teal[700],
+                  color: Color.fromRGBO(39, 167, 231, 1),
                   width: 50,
                   height: 3,
                 ),
@@ -206,13 +205,13 @@ class _TeamState extends State<Analytics> {
             child: Row(
               children: [
                 Container(
-                  child: Icon(Icons.arrow_back_ios_new, color: Colors.teal),
+                  child: Icon(Icons.arrow_back_ios_new, color: Color.fromRGBO(39, 167, 231, 1)),
                 ),
                 SizedBox(
                   width: 65,
                 ),
                 Container(
-                  child: Icon(Icons.calendar_month, color: Colors.teal),
+                  child: Icon(Icons.calendar_month, color: Color.fromRGBO(39, 167, 231, 1)),
                 ),
                 SizedBox(
                   width: 50,
@@ -220,14 +219,14 @@ class _TeamState extends State<Analytics> {
                 Container(
                   child: Text(
                     '15-06-2023',
-                    style: TextStyle(fontSize: 16, color: Colors.teal),
+                    style: TextStyle(fontSize: 16, color: Color.fromRGBO(39, 167, 231, 1)),
                   ),
                 ),
                 SizedBox(
                   width: 80,
                 ),
                 Container(
-                  child: Icon(Icons.arrow_forward_ios, color: Colors.teal),
+                  child: Icon(Icons.arrow_forward_ios, color: Color.fromRGBO(39, 167, 231, 1)),
                 )
               ],
             ),

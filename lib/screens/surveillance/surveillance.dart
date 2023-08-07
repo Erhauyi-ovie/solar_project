@@ -14,7 +14,7 @@ class _SurveillanceState extends State<Surveillance> {
     return Scaffold(
       drawer: Sidemenu(),
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Color.fromRGBO(39, 167, 231, 1),
         titleSpacing: 0,
         leading: Builder(
           builder: (context) {
@@ -40,7 +40,7 @@ class _SurveillanceState extends State<Surveillance> {
             size: 30,
             color: Colors.white,
           ),
-          SizedBox(width: 10)
+          SizedBox(width: 10),
         ],
       ),
       body: Stack(
@@ -59,7 +59,7 @@ class _SurveillanceState extends State<Surveillance> {
                   ),
                   Icon(
                     Icons.cloud_queue,
-                    color: Colors.teal[700],
+                    color: Color.fromRGBO(39, 167, 231, 1),
                   ),
                   SizedBox(
                     width: 116,
@@ -73,7 +73,7 @@ class _SurveillanceState extends State<Surveillance> {
                           text: '32',
                           style: TextStyle(
                             fontSize: 24,
-                            color: Colors.teal[700],
+                            color: Color.fromRGBO(39, 167, 231, 1),
                           ),
                           children: [
                             WidgetSpan(
@@ -83,17 +83,18 @@ class _SurveillanceState extends State<Surveillance> {
                                   '0',
                                   style: TextStyle(
                                     fontSize: 14,
-                                    color: Colors.teal[700],
+                                    color: Color.fromRGBO(39, 167, 231, 1),
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                             ),
                             TextSpan(
-                                text: 'C',
-                                style: TextStyle(
-                                  color: Colors.teal[700],
-                                ))
+                              text: 'C',
+                              style: TextStyle(
+                                color: Color.fromRGBO(39, 167, 231, 1),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -106,9 +107,9 @@ class _SurveillanceState extends State<Surveillance> {
                     'Sunny',
                     style: TextStyle(
                       fontSize: 22,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -130,7 +131,7 @@ class _SurveillanceState extends State<Surveillance> {
                     style: TextStyle(
                       fontSize: 19,
                       fontWeight: FontWeight.bold,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                   SizedBox(
@@ -140,7 +141,7 @@ class _SurveillanceState extends State<Surveillance> {
                     'Week',
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                   SizedBox(
@@ -150,7 +151,7 @@ class _SurveillanceState extends State<Surveillance> {
                     'Month',
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                   SizedBox(
@@ -160,7 +161,7 @@ class _SurveillanceState extends State<Surveillance> {
                     'Year',
                     style: TextStyle(
                       fontSize: 19,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                 ],
@@ -173,7 +174,7 @@ class _SurveillanceState extends State<Surveillance> {
             child: Row(
               children: [
                 Container(
-                  color: Colors.teal[700],
+                  color: Color.fromRGBO(39, 167, 231, 1),
                   width: 50,
                   height: 3,
                 ),
@@ -192,7 +193,7 @@ class _SurveillanceState extends State<Surveillance> {
                       color: Colors.grey[400],
                       width: 190,
                       height: 3,
-                    )
+                    ),
                   ],
                 ),
               ],
@@ -204,13 +205,13 @@ class _SurveillanceState extends State<Surveillance> {
             child: Row(
               children: [
                 Container(
-                  child: Icon(Icons.arrow_back_ios_new, color: Colors.teal),
+                  child: Icon(Icons.arrow_back_ios_new, color: Color.fromRGBO(39, 167, 231, 1)),
                 ),
                 SizedBox(
                   width: 65,
                 ),
                 Container(
-                  child: Icon(Icons.calendar_month, color: Colors.teal),
+                  child: Icon(Icons.calendar_month, color: Color.fromRGBO(39, 167, 231, 1)),
                 ),
                 SizedBox(
                   width: 50,
@@ -218,81 +219,81 @@ class _SurveillanceState extends State<Surveillance> {
                 Container(
                   child: Text(
                     '15-06-2023',
-                    style: TextStyle(fontSize: 16, color: Colors.teal),
+                    style: TextStyle(fontSize: 16, color: Color.fromRGBO(39, 167, 231, 1)),
                   ),
                 ),
                 SizedBox(
                   width: 80,
                 ),
                 Container(
-                  child: Icon(Icons.arrow_forward_ios, color: Colors.teal),
-                )
+                  child: Icon(Icons.arrow_forward_ios, color: Color.fromRGBO(39, 167, 231, 1)),
+                ),
               ],
             ),
           ),
           Positioned(
             top: 150,
-              left: 0,
-              child:
-          Row(
-            children: [
-              Container(
-                width:200,
-                height: 200,
-                child: Image.asset("assets/images/cam1.jpg"),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Container(
-                width:200,
-                height: 200,
-                child: Image.asset("assets/images/cam3.jpg"),
-              ),
-            ],
-          )),
+            left: 0,
+            child: Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/cam1.jpg"),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/cam3.jpg"),
+                ),
+              ],
+            ),
+          ),
           Positioned(
-              top: 302,
-              left: 0,
-              child:
-              Row(
-                children: [
-                  Container(
-                    width:200,
-                    height: 200,
-                    child: Image.asset("assets/images/cam3.jpg"),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Container(
-                    width:200,
-                    height: 200,
-                    child: Image.asset("assets/images/cam1.jpg"),
-                  ),
-                ],
-              )),
+            top: 302,
+            left: 0,
+            child: Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/cam3.jpg"),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/cam1.jpg"),
+                ),
+              ],
+            ),
+          ),
           Positioned(
-              top: 455,
-              left: 0,
-              child:
-              Row(
-                children: [
-                  Container(
-                    width:200,
-                    height: 200,
-                    child: Image.asset("assets/images/cam1.jpg"),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Container(
-                    width:200,
-                    height: 200,
-                    child: Image.asset("assets/images/cam3.jpg"),
-                  ),
-                ],
-              )),
+            top: 455,
+            left: 0,
+            child: Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/cam1.jpg"),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset("assets/images/cam3.jpg"),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

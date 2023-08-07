@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solar_project/screens/activeAreas/calvary_arrows.dart';
 import 'package:solar_project/screens/activeAreas/chalet.dart';
+import 'package:solar_project/screens/activeAreas/mini_mart.dart';
 import 'package:solar_project/screens/activeAreas/tent.dart';
 
 void main() {
@@ -41,6 +42,8 @@ class _ButtonWithLineDemoState extends State<ButtonWithLineDemo> {
       case 2:
         Get.to(() => ChaletPage());
         break;
+      case 3:
+        Get.to(() => MiniMartPage());
     }
   }
 
@@ -52,7 +55,7 @@ class _ButtonWithLineDemoState extends State<ButtonWithLineDemo> {
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
-              color: selectedButtonIndex == index ? Colors.green : Colors.grey,
+              color: selectedButtonIndex == index ? Colors.blue : Colors.grey,
               width: 2.0,
             ),
           ),
@@ -75,13 +78,16 @@ class _ButtonWithLineDemoState extends State<ButtonWithLineDemo> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildButton(0, 'Tent'),
-              _buildButton(1, 'Calvary Arrows'),
-              _buildButton(2, 'Chalet'),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                _buildButton(0, 'Tent'),
+                _buildButton(1, 'Calvary Arrows'),
+                _buildButton(2, 'Chalet'),
+                _buildButton(3, 'Minimart'),
+              ],
+            ),
           ),
           Expanded(
             child: Container(),

@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: Sidemenu(),
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Color.fromRGBO(39, 167, 231, 1),
         titleSpacing: 0,
         leading: Builder(
           builder: (context) {
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                     ),
                     Icon(
                       Icons.cloud_queue,
-                      color: Colors.teal[700],
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                     SizedBox(
                       width: 116,
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                             text: '32',
                             style: TextStyle(
                               fontSize: 24,
-                              color: Colors.teal[700],
+                              color:Color.fromRGBO(39, 167, 231, 1),
                             ),
                             children: [
                               WidgetSpan(
@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
                                     '0',
                                     style: TextStyle(
                                       fontSize: 14,
-                                      color: Colors.teal[700],
+                                      color: Color.fromRGBO(39, 167, 231, 1),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                               TextSpan(
                                 text: 'C',
                                 style: TextStyle(
-                                  color: Colors.teal[700],
+                                  color:Color.fromRGBO(39, 167, 231, 1),
                                 ),
                               ),
                             ],
@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
                       'Sunny',
                       style: TextStyle(
                         fontSize: 22,
-                        color: Colors.teal[700],
+                        color: Color.fromRGBO(39, 167, 231, 1),
                       ),
                     ),
                   ],
@@ -129,9 +129,9 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.tealAccent,
+                      color: Color.fromRGBO(39, 167, 231, 1),
                       blurRadius: 4,
-                      offset: Offset(0, 4),
+                      offset: Offset(1, 1),
                       spreadRadius: 0,
                     )
                   ],
@@ -149,7 +149,7 @@ class _HomeState extends State<Home> {
                     side: BorderSide(
                       width: 1,
                       strokeAlign: BorderSide.strokeAlignOutside,
-                      color: Colors.tealAccent,
+                      color: Color.fromRGBO(39, 167, 231, 1),
                     ),
                   ),
                 ),
@@ -228,7 +228,7 @@ class _HomeState extends State<Home> {
                                                   TextSpan(
                                                     text: '198.8',
                                                     style: TextStyle(
-                                                      color: Colors.tealAccent,
+                                                      color: Color.fromRGBO(255, 255, 255, 1),
                                                       fontSize: 36,
                                                       fontFamily: 'Inter',
                                                       fontWeight: FontWeight.w600,
@@ -237,7 +237,7 @@ class _HomeState extends State<Home> {
                                                   TextSpan(
                                                     text: ' ',
                                                     style: TextStyle(
-                                                      color: Colors.tealAccent,
+                                                      color: Color.fromRGBO(39, 167, 231, 1),
                                                       fontSize: 24,
                                                       fontFamily: 'Inter',
                                                       fontWeight: FontWeight.w600,
@@ -246,7 +246,7 @@ class _HomeState extends State<Home> {
                                                   TextSpan(
                                                     text: 'kwh',
                                                     style: TextStyle(
-                                                      color: Colors.tealAccent,
+                                                      color:Color.fromRGBO(255, 255, 255, 1),
                                                       fontSize: 20,
                                                       fontFamily: 'Inter',
                                                       fontWeight: FontWeight.w600,
@@ -276,7 +276,7 @@ class _HomeState extends State<Home> {
               left: 25,
               child: Container(
                 decoration: const BoxDecoration(
-                  color: Colors.tealAccent,
+                  color:Color.fromRGBO(39, 167, 231, 1),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
@@ -290,7 +290,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       'Total Energy Produced',
-                      style: TextStyle(fontSize: 18, color: Colors.teal[700]),
+                      style: TextStyle(fontSize: 18, color: Color.fromRGBO(255, 255, 255, 1)),
                     ),
                     SizedBox(
                       width: 10,
@@ -301,14 +301,14 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.bold,
-                          color: Colors.teal[700],
+                          color: Color.fromRGBO(255, 255, 255, 1),
                         ),
                         children: [
                           TextSpan(
                             text: 'kwh',
                             style: TextStyle(
                               fontSize: 20,
-                              color: Colors.teal[700],
+                              color: Color.fromRGBO(255, 255, 255, 1),
                             ),
                           ),
                         ],
@@ -323,7 +323,7 @@ class _HomeState extends State<Home> {
               left: 20,
               child: Container(
                 decoration: const BoxDecoration(
-                  color: Colors.tealAccent,
+                  color: Color.fromRGBO(39, 167, 231, 1),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
@@ -337,7 +337,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       "Today's Energy",
-                      style: TextStyle(fontSize: 18, color: Colors.teal[700]),
+                      style: TextStyle(fontSize: 18, color:Color.fromRGBO(255, 255, 255, 1)),
                     ),
                     RichText(
                       text: TextSpan(
@@ -345,14 +345,14 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.bold,
-                          color: Colors.teal[700],
+                          color:Color.fromRGBO(255, 255, 255, 1),
                         ),
                         children: [
                           TextSpan(
                             text: 'kwh',
                             style: TextStyle(
                               fontSize: 20,
-                              color: Colors.teal[700],
+                              color: Color.fromRGBO(255, 255, 255, 1),
                             ),
                           ),
                         ],
@@ -368,7 +368,7 @@ class _HomeState extends State<Home> {
               left: 210,
               child: Container(
                 decoration: const BoxDecoration(
-                  color: Colors.tealAccent,
+                  color: Color.fromRGBO(39, 167, 231, 1),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
@@ -382,7 +382,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       "Energy Intensity",
-                      style: TextStyle(fontSize: 18, color: Colors.teal[700]),
+                      style: TextStyle(fontSize: 18, color:Color.fromRGBO(255, 255, 255, 1)),
                     ),
                     SizedBox(
                       width: 10,
@@ -393,14 +393,14 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.bold,
-                          color: Colors.teal[700],
+                          color:Color.fromRGBO(255, 255, 255, 1),
                         ),
                         children: [
                           TextSpan(
                             text: 'kwh',
                             style: TextStyle(
                               fontSize: 20,
-                              color: Colors.teal[700],
+                              color: Color.fromRGBO(255, 255, 255, 1),
                             ),
                           ),
                         ],

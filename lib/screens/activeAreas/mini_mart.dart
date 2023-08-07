@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-class ChaletPage extends StatelessWidget {
+class MiniMartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chalet', style: TextStyle(color: Colors.white),),
+        title: Text('MiniMart', style: TextStyle(color: Colors.white),),
         backgroundColor:Color.fromRGBO(39, 167, 231, 1),
       ),
       body: Stack(
@@ -104,7 +104,7 @@ class ChaletPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 135),
                     child: Text(
-                      'Chalet',
+                      'MiniMart',
                       style: TextStyle(fontSize: 25, color: Color.fromRGBO(39, 167, 231, 1), fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -161,10 +161,10 @@ class ChaletPage extends StatelessWidget {
                           width: 100,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(50)
-                            )
+                              color: Colors.green,
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(50)
+                              )
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -203,12 +203,12 @@ class ChaletPage extends StatelessWidget {
           ),
           Positioned(
             top: 200,
-              left: 1,
-              child:Container(
-                color: Colors.grey[400],
-                width: 410,
-                height: 20,
-              ),
+            left: 1,
+            child:Container(
+              color: Colors.grey[400],
+              width: 410,
+              height: 20,
+            ),
           ),
           Positioned(
             top: 220,
@@ -239,18 +239,18 @@ class ChaletPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Building A',
+                              'MiniMart',
                               style: TextStyle(fontSize: 18, color:Color.fromRGBO(39, 167, 231, 1)),
                             ),
                             Text(
-                              '4Kwh',
+                              '15Kwh',
                               style: TextStyle(fontSize: 20, color: Color.fromRGBO(39, 167, 231, 1)),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 180),
+                        padding: const EdgeInsets.only(left: 190),
                         child: Container(
                           width: 100,
                           height: 40,
@@ -334,7 +334,7 @@ class ChaletPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Building B',
+                              'Bookshop',
                               style: TextStyle(fontSize: 18, color:Color.fromRGBO(39, 167, 231, 1)),
                             ),
                             Text(
@@ -345,7 +345,7 @@ class ChaletPage extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 180),
+                        padding: const EdgeInsets.only(left: 185),
                         child: Container(
                           width: 100,
                           height: 40,
@@ -399,299 +399,6 @@ class ChaletPage extends StatelessWidget {
               height: 2,
             ),
           ),
-
-
-
-          Positioned(
-            top: 410,
-            left: 0,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(5),
-                  topRight: Radius.circular(5),
-                  bottomLeft: Radius.circular(5),
-                  bottomRight: Radius.circular(5),
-                ),
-              ),
-              height: 79,
-              width: 410,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Row(
-                    children: [
-
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 5),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Building C',
-                              style: TextStyle(fontSize: 18, color:Color.fromRGBO(39, 167, 231, 1)),
-                            ),
-                            Text(
-                              '5Kwh',
-                              style: TextStyle(fontSize: 20, color: Color.fromRGBO(39, 167, 231, 1)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 180),
-                        child: Container(
-                          width: 100,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(50)
-                              )
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.circle
-                                ),
-                                child: Text('') ,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8,right: 8),
-                                child: Container(
-                                  height: 50,
-                                  child: Text('OFF', style: TextStyle(color: Colors.white, fontSize: 18),) ,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    width: 10,
-                    child: Text(''),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: 490,
-            left: 49,
-            child:Container(
-              color: Colors.grey[400],
-              width: 410,
-              height: 2,
-            ),
-          ),
-
-
-
-
-          Positioned(
-            top: 505,
-            left: 0,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(5),
-                  topRight: Radius.circular(5),
-                  bottomLeft: Radius.circular(5),
-                  bottomRight: Radius.circular(5),
-                ),
-              ),
-              height: 79,
-              width: 410,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Row(
-                    children: [
-
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 5),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Building D',
-                              style: TextStyle(fontSize: 18, color:Color.fromRGBO(39, 167, 231, 1)),
-                            ),
-                            Text(
-                              '5Kwh',
-                              style: TextStyle(fontSize: 20, color: Color.fromRGBO(39, 167, 231, 1)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 180),
-                        child: Container(
-                          width: 100,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(50)
-                              )
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.circle
-                                ),
-                                child: Text('') ,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8,right: 8),
-                                child: Container(
-                                  height: 50,
-                                  child: Text('OFF', style: TextStyle(color: Colors.white, fontSize: 18),) ,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    width: 10,
-                    child: Text(''),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: 580,
-            left: 49,
-            child:Container(
-              color: Colors.grey[400],
-              width: 410,
-              height: 2,
-            ),
-          ),
-
-
-          Positioned(
-            top: 590,
-            left: 0,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(5),
-                  topRight: Radius.circular(5),
-                  bottomLeft: Radius.circular(5),
-                  bottomRight: Radius.circular(5),
-                ),
-              ),
-              height: 79,
-              width: 410,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Row(
-                    children: [
-
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 5),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Building E',
-                              style: TextStyle(fontSize: 18, color:Color.fromRGBO(39, 167, 231, 1)),
-                            ),
-                            Text(
-                              '5Kwh',
-                              style: TextStyle(fontSize: 20, color: Color.fromRGBO(39, 167, 231, 1)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 180),
-                        child: Container(
-                          width: 100,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(50)
-                              )
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.circle
-                                ),
-                                child: Text('') ,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8,right: 8),
-                                child: Container(
-                                  height: 50,
-                                  child: Text('OFF', style: TextStyle(color: Colors.white, fontSize: 18),) ,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(
-                    width: 10,
-                    child: Text(''),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: 400,
-            left: 49,
-            child:Container(
-              color: Colors.grey[400],
-              width: 410,
-              height: 2,
-            ),
-          ),
-
-
         ],
       ),
     );

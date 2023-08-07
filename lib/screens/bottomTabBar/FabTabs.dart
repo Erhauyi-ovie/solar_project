@@ -43,7 +43,7 @@ class _FabTabsState extends State<FabTabs> {
     final screenWidth = MediaQuery.of(context).size.width;
     final iconSize = screenWidth > 600 ? 28.0 : 24.0;
     final textStyle = TextStyle(
-        color: currentIndex == 0 ? Colors.white : Colors.grey,
+        color: currentIndex == 0 ? Colors.white : Colors.white,
         fontSize: screenWidth > 600 ? 14.0 : 12.0);
 
     Widget currentScreen = pages[currentIndex];
@@ -55,7 +55,7 @@ class _FabTabsState extends State<FabTabs> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.teal[700],
+        color: Color.fromRGBO(39, 167, 231, 1),
         shape: CircularNotchedRectangle(),
         notchMargin: 10,
         child: Container(
@@ -76,8 +76,8 @@ class _FabTabsState extends State<FabTabs> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.home_filled,
-                        color: currentIndex == 0 ? Colors.white : Colors.grey,),
-                      Text("Home", style: TextStyle(color: currentIndex == 0 ? Colors.white: Colors.grey),)
+                        color: currentIndex == 0 ? Colors.white : Colors.white,),
+                      Text("Home", style: TextStyle(color: currentIndex == 0 ? Colors.white: Colors.white),)
                     ],
                   ),
 
@@ -96,8 +96,8 @@ class _FabTabsState extends State<FabTabs> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.visibility_outlined,
-                        color: currentIndex == 1 ? Colors.white : Colors.grey,),
-                      Text("Active", style: TextStyle(color: currentIndex == 1 ? Colors.white: Colors.grey),)
+                        color: currentIndex == 1 ? Colors.white : Colors.white,),
+                      Text("Active", style: TextStyle(color: currentIndex == 1 ? Colors.white: Colors.white),)
                     ],
                   ),
                 ),
@@ -115,8 +115,8 @@ class _FabTabsState extends State<FabTabs> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.analytics_outlined,
-                        color: currentIndex == 2 ? Colors.white : Colors.grey,),
-                      Text("Analytics", style: TextStyle(color: currentIndex == 2 ? Colors.white: Colors.grey),)
+                        color: currentIndex == 2 ? Colors.white : Colors.white,),
+                      Text("Analytics", style: TextStyle(color: currentIndex == 2 ? Colors.white: Colors.white),)
                     ],
                   ),
                 ),
@@ -134,8 +134,8 @@ class _FabTabsState extends State<FabTabs> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.camera_alt_outlined,
-                        color: currentIndex == 3 ? Colors.white : Colors.grey,),
-                      Text("Surveilla", style: TextStyle(color: currentIndex == 3 ? Colors.white: Colors.grey),)
+                        color: currentIndex == 3 ? Colors.white : Colors.white,),
+                      Text("Surveilla", style: TextStyle(color: currentIndex == 3 ? Colors.white: Colors.white),)
                     ],
                   ),
                 ),

@@ -38,57 +38,46 @@ class _SettingsState extends State<Settings> {
                 ),
                 Container(
                   child: Icon(
-                    Icons.logout_outlined,
-                    color: Color.fromRGBO(39, 167, 231, 1),
+                    Icons.logout_outlined, color: Colors.teal,
                   ),
                 ),
                 SizedBox(height: 20),
                 Text(
                   'Are you sure you want to logout?',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color.fromRGBO(39, 167, 231, 1),
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.teal),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 30),
                 Container(
-                  width: 250,
-                  height: 60,
+                  width: 250, // Adjust the width as needed
+                  height: 60, // Adjust the height as needed
                   child: ElevatedButton(
                     onPressed: () {
                       // Perform logout action
                       Navigator.of(context).pop();
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.red,
+                      primary: Colors.red, // Set the background color to red
                     ),
-                    child: Text(
-                      'No, Keep me signed in',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    ),
+                    child: Text('No, Keep me signed in', style: TextStyle(fontSize: 18, color: Colors.white)),
                   ),
                 ),
+
                 SizedBox(
                   height: 10,
                 ),
                 Container(
-                  width: 250,
-                  height: 60,
+                  width: 250, // Adjust the width as needed
+                  height: 60, // Adjust the height as needed
                   child: ElevatedButton(
                     onPressed: () {
                       // Perform logout action
                       Navigator.of(context).pop();
                     },
-                    child: Text(
-                      'Yes, Log me out',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Color.fromRGBO(39, 167, 231, 1),
-                      ),
-                    ),
+                    child: Text('Yes, Log me out', style: TextStyle(fontSize: 18, color: Colors.teal)),
                   ),
-                ),
+                )
+
               ],
             ),
           ),
@@ -102,7 +91,7 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       drawer: Sidemenu(),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(39, 167, 231, 1),
+        backgroundColor: Colors.teal,
         titleSpacing: 0,
         leading: Builder(
           builder: (context) {
@@ -137,7 +126,7 @@ class _SettingsState extends State<Settings> {
             top: 0,
             left: 0,
             child: Container(
-              color: Color.fromRGBO(39, 167, 231, 1),
+              color: Colors.teal,
               width: 413,
               height: 50,
               child: Row(
@@ -176,9 +165,10 @@ class _SettingsState extends State<Settings> {
               onPressed: () {
                 // Handle button press
               },
-              child: Icon(Icons.camera_alt_outlined, color: Colors.cyan),
+              child: Icon(Icons.camera_alt_outlined,
+                color: Colors.cyan,),
               shape: CircleBorder(),
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.white, // Customize the background color
             ),
           ),
           Positioned(
@@ -187,24 +177,28 @@ class _SettingsState extends State<Settings> {
             child: Row(
               children: [
                 Container(
-                  child: Icon(Icons.smartphone, size: 35, color: Color.fromRGBO(39, 167, 231, 1)),
+                  child: Icon(Icons.smartphone, size: 35, color: Colors.teal,),
                 ),
                 Column(
                   children: [
                     Container(
                       child: Text(
                         'App preferences',
-                        style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
+                        style: TextStyle(
+                            color: Colors.teal
+                        ),
                       ),
                     ),
                     Container(
                       child: Text(
                         'Adjust your view',
-                        style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
+                        style: TextStyle(
+                            color: Colors.teal
+                        ),
                       ),
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),
@@ -214,36 +208,34 @@ class _SettingsState extends State<Settings> {
             child: Container(
               width: 350,
               height: 150,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromRGBO(39, 167, 231, 1),
+                    color: Colors.teal,
                     blurRadius: 6,
                     offset: Offset(2, 2),
                     spreadRadius: 0,
-                  ),
+                  )
                 ],
               ),
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Row(
                           children: [
                             Container(
-                              child: Icon(Icons.text_fields, color: Color.fromRGBO(39, 167, 231, 1)),
+                              child: Icon(Icons.text_fields, color: Colors.teal,),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Container(
-                                child: Text(
-                                  'Font Size',
-                                  style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
-                                ),
+                                child: Text('Font Size',
+                                  style: TextStyle(color: Colors.teal),),
                               ),
                             ),
                           ],
@@ -252,28 +244,26 @@ class _SettingsState extends State<Settings> {
                       Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Container(
-                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Color.fromRGBO(39, 167, 231, 1)),
+                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Colors.teal,),
                         ),
-                      ),
+                      )
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Row(
                           children: [
                             Container(
-                              child: Icon(Icons.brightness_2, color: Color.fromRGBO(39, 167, 231, 1)),
+                              child: Icon(Icons.brightness_2, color: Colors.teal,),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Container(
-                                child: Text(
-                                  'Dark Theme',
-                                  style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
-                                ),
+                                child: Text('Dark Theme',
+                                  style: TextStyle(color: Colors.teal),),
                               ),
                             ),
                           ],
@@ -282,28 +272,26 @@ class _SettingsState extends State<Settings> {
                       Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Container(
-                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Color.fromRGBO(39, 167, 231, 1)),
+                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Colors.teal,),
                         ),
-                      ),
+                      )
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Row(
                           children: [
                             Container(
-                              child: Icon(Icons.signal_cellular_0_bar, color: Color.fromRGBO(39, 167, 231, 1)),
+                              child: Icon(Icons.signal_cellular_0_bar, color: Colors.teal,),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Container(
-                                child: Text(
-                                  'Energy unit',
-                                  style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
-                                ),
+                                child: Text('Energy unit',
+                                  style: TextStyle(color: Colors.teal),),
                               ),
                             ),
                           ],
@@ -312,9 +300,9 @@ class _SettingsState extends State<Settings> {
                       Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Container(
-                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Color.fromRGBO(39, 167, 231, 1)),
+                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Colors.teal,),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ],
@@ -327,7 +315,7 @@ class _SettingsState extends State<Settings> {
             child: Row(
               children: [
                 Container(
-                  child: Icon(Icons.help_outline, size: 35, color: Color.fromRGBO(39, 167, 231, 1)),
+                  child: Icon(Icons.help_outline, size: 35, color: Colors.teal,),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -335,17 +323,21 @@ class _SettingsState extends State<Settings> {
                     Container(
                       child: Text(
                         'Help',
-                        style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
+                        style: TextStyle(
+                            color: Colors.teal
+                        ),
                       ),
                     ),
                     Container(
                       child: Text(
                         'Get quick assistance',
-                        style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
+                        style: TextStyle(
+                            color: Colors.teal
+                        ),
                       ),
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),
@@ -355,36 +347,34 @@ class _SettingsState extends State<Settings> {
             child: Container(
               width: 350,
               height: 100,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromRGBO(39, 167, 231, 1),
+                    color: Colors.teal,
                     blurRadius: 6,
                     offset: Offset(2, 2),
                     spreadRadius: 0,
-                  ),
+                  )
                 ],
               ),
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Row(
                           children: [
                             Container(
-                              child: Icon(Icons.info_outline, color: Color.fromRGBO(39, 167, 231, 1)),
+                              child: Icon(Icons.info_outline, color: Colors.teal,),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Container(
-                                child: Text(
-                                  'FAQ',
-                                  style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
-                                ),
+                                child: Text('FAQ',
+                                  style: TextStyle(color: Colors.teal),),
                               ),
                             ),
                           ],
@@ -393,28 +383,26 @@ class _SettingsState extends State<Settings> {
                       Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Container(
-                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Color.fromRGBO(39, 167, 231, 1)),
+                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Colors.teal,),
                         ),
-                      ),
+                      )
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Row(
                           children: [
                             Container(
-                              child: Icon(Icons.headset_mic, color: Color.fromRGBO(39, 167, 231, 1)),
+                              child: Icon(Icons.headset_mic, color: Colors.teal,),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Container(
-                                child: Text(
-                                  'Contact support',
-                                  style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1)),
-                                ),
+                                child: Text('Contact support',
+                                  style: TextStyle(color: Colors.teal),),
                               ),
                             ),
                           ],
@@ -423,7 +411,7 @@ class _SettingsState extends State<Settings> {
                       Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Container(
-                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Color.fromRGBO(39, 167, 231, 1)),
+                          child: Icon(Icons.arrow_forward_ios, size: 20, color: Colors.teal,),
                         ),
                       ),
                     ],
@@ -438,7 +426,7 @@ class _SettingsState extends State<Settings> {
             child: Row(
               children: [
                 Container(
-                  child: Icon(Icons.logout_outlined, size: 35, color: Color.fromRGBO(39, 167, 231, 1)),
+                  child: Icon(Icons.logout_outlined, size: 35, color: Colors.teal),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -448,11 +436,11 @@ class _SettingsState extends State<Settings> {
                         onPressed: () {
                           _showLogoutModal(context);
                         },
-                        child: Text('Logout', style: TextStyle(color: Color.fromRGBO(39, 167, 231, 1))),
+                        child: Text('Logout', style: TextStyle(color: Colors.teal),),
                       ),
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),
