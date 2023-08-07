@@ -1,85 +1,183 @@
 import 'package:flutter/material.dart';
+import 'package:solar_project/screens/home/home.dart';
 
-class LoginScreen extends StatelessWidget {
+
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: SingleChildScrollView(
+      body: Container(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 280,
+              height: 300, // Adjust the height as needed
+              child: FittedBox(
+                fit: BoxFit.fitHeight,
+                child: Image.asset('assets/images/solars.jpg'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 250, left: 170),
+              child: SizedBox(
+                height: 100,
+                width: 100,
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 330, left: 55),
+              child: SizedBox(
+                height: 100,
+                width: 100,
+                child: Text(
+                  'Email',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 360, left: 55),
+              child: SizedBox(
+                height: 60,
+                width: 300,
+                child: Container(
+                  height: 60,
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Enter password',
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue, width: 1.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 450, left: 55),
+              child: SizedBox(
+                height: 100,
+                width: 100,
+                child: Text(
+                  'Password',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 490, left: 55),
+              child: SizedBox(
+                height: 60,
+                width: 300,
+                child: Container(
+                  height: 60,
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Enter password',
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue, width: 1.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 550, left: 60),
+              child: SizedBox(
+                height: 60,
+                width: 300,
+                child: Container(
+                  height: 60,
+                  width: 300,
+                  child: Row(
+                    children: [
+                      Text(
+                        'Forgot Password?',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          'Contact Admin',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
 
-              child: Image.asset('assets/solar.jpg'), 
-            ),
-            const SizedBox(height: 20),
-            // Email and Password fields
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Email',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 10),
-                  SizedBox(
-                    width: 300,
-                    height: 60,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter your email',
-                        border: OutlineInputBorder(),
+            Padding(
+              padding: const EdgeInsets.only(top: 630, left: 45),
+              child: SizedBox(
+                height: 60,
+                width: 300,
+                child: Container(
+                  height: 60,
+                  width: 300,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 35),
+                        child: Container(
+                          height: 50,
+                          width: 250,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Home()),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                            ),
+                            child: Text(
+                              'Login',
+                              style: TextStyle(color: Colors.white, fontSize: 25),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Password',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 10),
-                  SizedBox(
-                    width: 300,
-                    height: 60,
-                    child: TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your password',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
-            const SizedBox(height: 20),
-            // "Forgot Password? Contact Admin" text
-            GestureDetector(
-              onTap: () {
-                // Implement the logic to handle "Forgot Password" action here
-              },
-              child: const Text(
-                'Forgot Password? Contact Admin',
-                style: TextStyle(decoration: TextDecoration.underline),
-              ),
-            ),
-            const SizedBox(height: 20),
-            // Login button
-            SizedBox(
-              width: 300,
-              height: 60,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Implement the login logic here
-                },
-                child: const Text('Login', style: TextStyle(fontSize: 20)),
-              ),
+            Stack(
+              children: [
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: SizedBox(
+                    width: 415,
+                    height: 345,
+                    // child: Image.asset('assets/images/solars.jpg'),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
