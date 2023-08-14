@@ -63,82 +63,38 @@ class _FabTabsState extends State<FabTabs> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Change to spaceEvenly
             children: [
-              Expanded(
-                child: MaterialButton(
-                  minWidth: 50,
-                  onPressed: (){
-                    setState(() {
-                      currentScreen = Home();
-                      currentIndex = 0;
-                    });
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.home_filled,
-                        color: currentIndex == 0 ? Colors.white : Colors.white,),
-                      Text("Home", style: TextStyle(color: currentIndex == 0 ? Colors.white: Colors.white),)
-                    ],
-                  ),
 
-                ),
+              Expanded(
+                child: BottomNavBarItem(icon: Icons.home_filled,title: "Home",onPressed: (){
+                  setState(() {
+                    currentScreen = Home();
+                    currentIndex = 0;
+                  });
+                },currentIndex:currentIndex ,index: 0,)
               ),
               Expanded(
-                child: MaterialButton(
-                  minWidth: 50,
-                  onPressed: (){
-                    setState(() {
-                      currentScreen = ActiveAreas();
-                      currentIndex = 1;
-                    });
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.visibility_outlined,
-                        color: currentIndex == 1 ? Colors.white : Colors.white,),
-                      Text("Active", style: TextStyle(color: currentIndex == 1 ? Colors.white: Colors.white),)
-                    ],
-                  ),
-                ),
+                child:BottomNavBarItem(icon: Icons.visibility_outlined,title: "Active",onPressed: (){
+                  setState(() {
+                    currentScreen = ActiveAreas();
+                    currentIndex = 1;
+                  });
+                },currentIndex:currentIndex ,index: 1,)
               ),
               Expanded(
-                child: MaterialButton(
-                  minWidth: 50,
-                  onPressed: (){
-                    setState(() {
-                      currentScreen = Analytics();
-                      currentIndex = 2;
-                    });
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.analytics_outlined,
-                        color: currentIndex == 2 ? Colors.white : Colors.white,),
-                      Text("Analytics", style: TextStyle(color: currentIndex == 2 ? Colors.white: Colors.white),)
-                    ],
-                  ),
-                ),
+                child: BottomNavBarItem(icon: Icons.home_filled,title: "Analytics",onPressed: (){
+                  setState(() {
+                    currentScreen = Analytics();
+                    currentIndex = 2;
+                  });
+                },currentIndex:currentIndex ,index: 2,),
               ),
               Expanded(
-                child: MaterialButton(
-                  minWidth: 50,
-                  onPressed: (){
-                    setState(() {
-                      currentScreen = Surveillance();
-                      currentIndex = 3;
-                    });
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.camera_alt_outlined,
-                        color: currentIndex == 3 ? Colors.white : Colors.white,),
-                      Text("Surveilla", style: TextStyle(color: currentIndex == 3 ? Colors.white: Colors.white),)
-                    ],
-                  ),
-                ),
+                child: BottomNavBarItem(icon: Icons.camera_alt_outlined,title: "Surveillance",onPressed: (){
+                  setState(() {
+                    currentScreen = Home();
+                    currentIndex = 3;
+                  });
+                },currentIndex:currentIndex ,index: 3,),
               ),
             ],
           ),
@@ -147,3 +103,34 @@ class _FabTabsState extends State<FabTabs> {
     );
   }
 }
+
+
+
+
+class BottomNavBarItem extends StatelessWidget {
+  final int index;
+  final int currentIndex;
+  final String title;
+  final Function onPressed;
+  final IconData icon;
+  const BottomNavBarItem({required this.index, required this.title, required this.onPressed, required this.icon, required this.currentIndex});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      minWidth: 50,
+      onPressed: (){
+       onPressed();
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.visibility_outlined,
+            color: currentIndex == index ? Colors.white : Colors.white,),
+          Text(title, style: TextStyle(color: currentIndex == index ? Colors.white: Colors.white),)
+        ],
+      ),
+    );
+  }
+}
+
