@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigateToNextScreen() {
     Future.delayed(const Duration(seconds: 5), () {
-      Get.offAll(() => Login());
+      Get.offAll(() => SignupPage());
     });
   }
 
@@ -51,21 +51,21 @@ class _SplashScreenState extends State<SplashScreen> {
                         child: const Stack(
                           children: [
                             Image(
-                              image: AssetImage("assets/images/solars.jpg"),
+                              image: AssetImage("assets/images/logo.png"),
                             ),
                           ],
                         ),
 
                       ),
-                      const Text(
-                        'SYNERGY',
-                        style: TextStyle(
-                          color: Color(0xFF148760),
-                          fontSize: 36,
-                          fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      // const Text(
+                      //   'SYNERGY',
+                      //   style: TextStyle(
+                      //     color: Color(0xFF148760),
+                      //     fontSize: 36,
+                      //     fontFamily: 'Lexend',
+                      //     fontWeight: FontWeight.w600,
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
