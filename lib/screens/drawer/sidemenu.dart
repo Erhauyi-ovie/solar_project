@@ -58,7 +58,7 @@ class Sidemenu extends StatelessWidget {
               Get.to(() => Profile());
             }),
             buildDrawerItem("Login", Icons.login_outlined, () {
-              Get.to(() => Login());
+              Get.to(() => SignupPage());
             }),
           ],
         ),

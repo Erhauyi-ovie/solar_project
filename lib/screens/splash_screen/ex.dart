@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:solar_project/screens/home/home.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 
@@ -28,9 +27,9 @@ class _SignupPageState extends State<SignupPage> {
   Future<void> _signup() async {
     if (_formKey.currentState?.validate() ?? false) {
       final response = await http.post(
-        Uri.parse('https://ed8c-102-215-57-183.ngrok.io/user-signup'), // Convert String URL to Uri
+        Uri.parse('https://8e25-102-215-57-183.ngrok.io/user-signup'), // Convert String URL to Uri
         body: {
-          'username': _username,
+          'name': _username,
           'email': _email,
           'password': _password,
         },
@@ -38,7 +37,7 @@ class _SignupPageState extends State<SignupPage> {
 
       if (response.statusCode == 200) {
         // User successfully created
-        Navigator.of(context).pop(Home());
+        Navigator.of(context).pop();
       } else {
         // Error creating user
         print(response.body);
@@ -74,13 +73,10 @@ class _SignupPageState extends State<SignupPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left:15),
-                          child: const SizedBox(
-                            child: Text(
-                              "Username",
-                              style: TextStyle(color: Colors.blue, fontSize: 20),
-                            ),
+                        const SizedBox(
+                          child: Text(
+                            "Username",
+                            style: TextStyle(color: Colors.blue, fontSize: 20),
                           ),
                         ),
                         TextFormField(
@@ -103,11 +99,10 @@ class _SignupPageState extends State<SignupPage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Padding(padding: EdgeInsets.only(left: 15),
-                        child:  const Text(
+                        Text(
                           "Email",
                           style: TextStyle(color: Colors.blue, fontSize: 20),
-                        ),),
+                        ),
                         TextFormField(
                           decoration: InputDecoration(
                             filled: true,
@@ -129,11 +124,10 @@ class _SignupPageState extends State<SignupPage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Padding(padding: EdgeInsets.only(left: 15),
-                        child: Text(
+                        Text(
                           "Password",
                           style: TextStyle(color: Colors.blue, fontSize: 20),
-                        ),),
+                        ),
                         TextFormField(
                           decoration: InputDecoration(
                             filled: true,
@@ -204,6 +198,11 @@ class _SignupPageState extends State<SignupPage> {
 }
 
 
+
+
+
+
+// 'https://a8a4-102-215-57-183.ngrok.io/api/registerUser'
 
 
 
