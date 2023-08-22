@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solar_project/screens/bottomTabBar/FabTabs.dart';
-// import 'package:solar_project/screens/login/login_page.dart';
-import 'package:solar_project/screens/login/login_screen.dart';
+import 'package:solar_project/screens/login/login_page.dart';
+import 'package:solar_project/screens/login/signup.dart';
 import 'package:solar_project/screens/profile/profile.dart';
 import 'package:solar_project/screens/report/report.dart';
 import 'package:solar_project/screens/settings/settings.dart';
@@ -31,7 +31,6 @@ class Sidemenu extends StatelessWidget {
                   color: Colors.white,
                   image: DecorationImage(
                     fit: BoxFit.fill,
-                    // Increase the height of the image by adjusting the height property
                     image: AssetImage('assets/images/solar.jpg'),
                   ),
                 ),
@@ -58,8 +57,11 @@ class Sidemenu extends StatelessWidget {
             buildDrawerItem("Profile", Icons.person_outline, () {
               Get.to(() => Profile());
             }),
-            buildDrawerItem("Login", Icons.login_outlined, () {
+            buildDrawerItem("Signup", Icons.login_outlined, () {
               Get.to(() => SignupPage());
+            }),
+            buildDrawerItem("Login", Icons.login_outlined, () {
+              Get.to(() => LoginPage());
             }),
           ],
         ),

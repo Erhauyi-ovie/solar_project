@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Required to hide the status bar
-import 'package:solar_project/screens/login/login_screen.dart';
+import 'package:solar_project/screens/login/signup.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

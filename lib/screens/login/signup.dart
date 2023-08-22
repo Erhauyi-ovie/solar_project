@@ -28,7 +28,7 @@ class _SignupPageState extends State<SignupPage> {
   Future<void> _signup() async {
     if (_formKey.currentState?.validate() ?? false) {
       final response = await http.post(
-        Uri.parse('https://ea62-102-215-57-254.ngrok.io/user-signup'), // Convert String URL to Uri
+        Uri.parse('https://a360-102-215-57-254.ngrok.io/user-signup'), // Convert String URL to Uri
         body: {
           'username': _username,
           'email': _email,
@@ -154,27 +154,6 @@ class _SignupPageState extends State<SignupPage> {
                         ).p4().px12(),
                         const SizedBox(
                           height: 10,
-                        ),
-                        const Row(
-                          children: [
-                            Padding(
-                              padding:
-                              const EdgeInsets.only(right: 10, bottom: 10),
-                              child: Text(
-                                'Forgot Password?',
-                                style:
-                                TextStyle(color: Colors.blue, fontSize: 20),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: Text(
-                                'Contact Admin',
-                                style:
-                                TextStyle(color: Colors.blue, fontSize: 20),
-                              ),
-                            ),
-                          ],
                         ),
                         GestureDetector(
                           onTap: _signup,
