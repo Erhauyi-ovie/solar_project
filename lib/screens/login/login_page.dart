@@ -137,7 +137,9 @@ class _LoginPageState extends State<LoginPage> {
                             ],
                           ),
                           GestureDetector(
-                            onTap: _login,
+                            onTap: ()async{
+                              await _login();
+                            },
                             child: VxBox(
                               child: "Login"
                                   .text
