@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> _login() async {
     var url = Uri.parse('https://a360-102-215-57-254.ngrok.io/user-login'); // Convert to Uri
-    var response = await http.post(url, body: {
+    var response = await http.post(url,headers: {'Content-Type': 'application/json'}, body: {
       'email': _emailController.text,
       'password': _passwordController.text,
     });
