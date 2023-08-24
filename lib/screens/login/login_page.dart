@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   bool _isNotValid = false;
 
   Future<void> _login() async {
-    var url = Uri.parse('https://a360-102-215-57-254.ngrok.io/user-login'); // Convert to Uri
+    var url = Uri.parse('https://03bb-102-215-57-254.ngrok.io/user-login');
     var response = await http.post(url, body: {
       'email': _emailController.text,
       'password': _passwordController.text,
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       var data = jsonDecode(response.body);
       if (data['status'] == 'SUCCESS') {
         var redirectUrl = data['redirectUrl'];
-        Get.toNamed(redirectUrl); // Navigate to the homepage using GetX
+        Get.toNamed(redirectUrl);
       } else {
         setState(() {
           _isNotValid = true;

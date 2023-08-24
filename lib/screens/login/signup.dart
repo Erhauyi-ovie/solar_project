@@ -28,7 +28,7 @@ class _SignupPageState extends State<SignupPage> {
   Future<void> _signup() async {
     if (_formKey.currentState?.validate() ?? false) {
       final response = await http.post(
-        Uri.parse('https://a360-102-215-57-254.ngrok.io/user-signup'), // Convert String URL to Uri
+        Uri.parse('https://03bb-102-215-57-254.ngrok.io/user-signup'), // Convert String URL to Uri
         body: {
           'username': _username,
           'email': _email,
