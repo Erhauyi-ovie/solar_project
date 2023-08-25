@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:solar_project/screens/home/home.dart';
+import 'package:solar_project/screens/login/login_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 
@@ -40,15 +41,19 @@ class _SignupPageState extends State<SignupPage> {
         // User successfully created
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Signup successful'),
+            content: Text('Signup successful',style:TextStyle(color: Colors.white)),
+            backgroundColor: Colors.green,
+            duration: Duration(seconds: 2),
           ),
         );
-        Navigator.of(context).pop(Home());
+        Navigator.of(context).pop(LoginPage());
       } else {
         // Error creating user
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Signup failed'),
+            content: Text('Signup failed',style: TextStyle(color: Colors.white),),
+            backgroundColor: Colors.red,
+            duration: Duration(seconds: 2),
           ),
         );
         setState(() {
@@ -178,6 +183,32 @@ class _SignupPageState extends State<SignupPage> {
                               .px24()
                               .py20(),
                         ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              child: RichText(
+                                text: const TextSpan(
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 14),
+                                    children: [
+                                      TextSpan(text: "Already have an account?  ",style: TextStyle(
+                                          color: Colors.black, fontSize: 12),),
+                                      TextSpan(
+                                          text: "Login",
+                                          style: TextStyle(color: Colors.blue))
+                                    ]),
+                              ),
+                              onTap: (){
+                                Navigator.of(context).pop();
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+                              },
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
