@@ -1,34 +1,24 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:solar_project/screens/home/home.dart';
+import 'package:solar_project/screens/login/login_page.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
 }
-bool _isNotValid = false;
 
 class _SignupPageState extends State<SignupPage> {
-  late GlobalKey<FormState> _formKey;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String _username = '';
   String _email = '';
   String _password = '';
 
-
-  @override
-  void initState() {
-    super.initState();
-    _formKey = GlobalKey<FormState>();
-  }
-
   Future<void> _signup() async {
-    if (_formKey.currentState?.validate() ?? false) {
+    if (_formKey.currentState!.validate()) {
       final response = await http.post(
-        Uri.parse('https://bf6c-102-215-57-254.ngrok.io/user-signup'), // Convert String URL to Uri
+        Uri.parse('https://power-mag-sys.onrender.com/api/registerUser'),
         body: {
           'username': _username,
           'email': _email,
@@ -36,19 +26,26 @@ class _SignupPageState extends State<SignupPage> {
         },
       );
 
-      if (response.statusCode == 200) {
-        // User successfully created
-        Navigator.of(context).pop(Home());
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Signup successful', style: TextStyle(color: Colors.white)),
+            backgroundColor: Colors.green,
+            duration: Duration(seconds: 2),
+          ),
+        );
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
       } else {
-        // Error creating user
-        print(response.body);
-        setState(() {
-          _isNotValid = true;
-        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Signup failed', style: TextStyle(color: Colors.white)),
+            backgroundColor: Colors.red,
+            duration: Duration(seconds: 2),
+          ),
+        );
       }
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -75,12 +72,10 @@ class _SignupPageState extends State<SignupPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left:15),
-                          child: const SizedBox(
-                            child: Text(
-                              "Username",
-                              style: TextStyle(color: Colors.blue, fontSize: 20),
-                            ),
+                          padding: const EdgeInsets.only(left: 15),
+                          child: const Text(
+                            "Username",
+                            style: TextStyle(color: Colors.blue, fontSize: 20),
                           ),
                         ),
                         TextFormField(
@@ -92,63 +87,78 @@ class _SignupPageState extends State<SignupPage> {
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
-                            errorStyle: TextStyle(color: Colors.white),
-                            errorText: _isNotValid ? "Enter proper Info" : null,
                             hintText: "Enter Username",
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue),
                             ),
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Username is required";
+                            }
+                            return null;
+                          },
                         ).p4().px12(),
                         const SizedBox(
                           height: 20,
                         ),
-                        Padding(padding: EdgeInsets.only(left: 15),
-                        child:  const Text(
-                          "Email",
-                          style: TextStyle(color: Colors.blue, fontSize: 20),
-                        ),),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            errorStyle: TextStyle(color: Colors.white),
-                            errorText: _isNotValid ? "Enter proper Info" : null,
-                            hintText: "Enter Email",
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
-                            ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: const Text(
+                            "Email",
+                            style: TextStyle(color: Colors.blue, fontSize: 20),
                           ),
+                        ),
+                        TextFormField(
                           onChanged: (value) {
                             setState(() {
                               _email = value;
                             });
                           },
-                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "Enter Email",
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Email is required";
+                            }
+                            return null;
+                          },
                         ).p4().px12(),
                         const SizedBox(
                           height: 20,
                         ),
-                        Padding(padding: EdgeInsets.only(left: 15),
-                        child: Text(
-                          "Password",
-                          style: TextStyle(color: Colors.blue, fontSize: 20),
-                        ),),
+                        Padding(
+                          padding: EdgeInsets.only(left: 15),
+                          child: const Text(
+                            "Password",
+                            style: TextStyle(color: Colors.blue, fontSize: 20),
+                          ),
+                        ),
                         TextFormField(
+                          onChanged: (value) {
+                            setState(() {
+                              _password = value;
+                            });
+                          },
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
-                            errorStyle: TextStyle(color: Colors.white),
-                            errorText: _isNotValid ? "Enter proper Info" : null,
                             hintText: "Enter Password",
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue),
                             ),
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              _password = value;
-                            });
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Password is required";
+                            }
+                            return null;
                           },
                           obscureText: true,
                         ).p4().px12(),
@@ -158,17 +168,42 @@ class _SignupPageState extends State<SignupPage> {
                         GestureDetector(
                           onTap: _signup,
                           child: VxBox(
-                              child: "Register"
-                                  .text.xl
-                                  .white
-                                  .makeCentered()
-                                  .p16())
+                            child: "Register".text.xl.white.makeCentered().p16(),
+                          )
                               .green600
                               .rounded
                               .make()
                               .px24()
                               .py20(),
                         ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              child: RichText(
+                                text: TextSpan(
+                                  style: TextStyle(color: Colors.black, fontSize: 14),
+                                  children: [
+                                    TextSpan(
+                                      text: "Already have an account?  ",
+                                      style: TextStyle(color: Colors.black, fontSize: 12),
+                                    ),
+                                    TextSpan(
+                                      text: "Login",
+                                      style: TextStyle(color: Colors.blue),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              onTap: () {
+                                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
+                              },
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -181,8 +216,3 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 }
-
-
-
-
-
