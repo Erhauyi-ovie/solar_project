@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solar_project/screens/bottomTabBar/FabTabs.dart';
+import 'package:solar_project/screens/login/login_page.dart';
 
 import 'screens/splash_screen/splash_screen.dart';
 
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: SplashScreen()
-      home: FabTabs(selectedIndex: 0,),
+      home: LoginPage(),
+        // FabTabs(selectedIndex: 0,)
+
     );
   }
 }
