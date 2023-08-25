@@ -27,6 +27,7 @@ class _SignupPageState extends State<SignupPage> {
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
+        // User successfully created
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Signup successful', style: TextStyle(color: Colors.white)),
