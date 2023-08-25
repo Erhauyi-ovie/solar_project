@@ -38,10 +38,19 @@ class _SignupPageState extends State<SignupPage> {
 
       if (response.statusCode == 200) {
         // User successfully created
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Signup successful'),
+          ),
+        );
         Navigator.of(context).pop(Home());
       } else {
         // Error creating user
-        print(response.body);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Signup failed'),
+          ),
+        );
         setState(() {
           _isNotValid = true;
         });

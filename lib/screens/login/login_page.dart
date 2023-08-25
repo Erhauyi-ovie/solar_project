@@ -29,23 +29,28 @@ class _LoginPageState extends State<LoginPage> {
         // var redirectUrl = data['redirectUrl'];
         // Get.toNamed(redirectUrl); // Navigate to the homepage using GetX
          print(response.body);
+
+         ScaffoldMessenger.of(context).showSnackBar(
+           const SnackBar(
+             content: Text('Login successful'),
+           ),
+         );
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Home()),
+          MaterialPageRoute(builder: (context) =>  Home()),
         );
       } else {
         setState(() {
           _isNotValid = true;
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(data['message']),
-          ),
-        );
+        const SnackBar(
+          content: Text('Login failed'),
+
+    );
       }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Login failed'),
         ),
       );
@@ -57,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: SafeArea(
         child: Scaffold(
@@ -91,10 +96,10 @@ class _LoginPageState extends State<LoginPage> {
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.white,
-                              errorStyle: TextStyle(color: Colors.white),
+                              errorStyle: const TextStyle(color: Colors.white),
                               errorText: _isNotValid ? "Enter proper Info" : null,
                               hintText: "Enter Email",
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.blue),
                               ),
                             ),
@@ -112,10 +117,10 @@ class _LoginPageState extends State<LoginPage> {
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.white,
-                              errorStyle: TextStyle(color: Colors.white),
+                              errorStyle: const TextStyle(color: Colors.white),
                               errorText: _isNotValid ? "Enter proper Info" : null,
                               hintText: "Enter Password",
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.blue),
                               ),
                             ),
@@ -124,17 +129,17 @@ class _LoginPageState extends State<LoginPage> {
                           const SizedBox(
                             height: 10,
                           ),
-                          Row(
+                          const Row(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(right: 10, bottom: 10),
+                                padding: EdgeInsets.only(right: 10, bottom: 10),
                                 child: Text(
                                   'Forgot Password?',
                                   style: TextStyle(color: Colors.blue, fontSize: 20),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
+                                padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
                                   'Contact Admin',
                                   style: TextStyle(color: Colors.blue, fontSize: 20),
