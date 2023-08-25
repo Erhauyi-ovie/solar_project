@@ -17,18 +17,18 @@ class _LoginPageState extends State<LoginPage> {
   bool _isNotValid = false;
 
   Future<void> _login() async {
-    var url = Uri.parse('https://a360-102-215-57-254.ngrok.io/userLogin'); // Convert to Uri
-    var response = await http.post(url,headers: {'Content-Type': 'application/json'}, body: {
+    var url = Uri.parse('https://power-mag-sys.onrender.com/api/userLogin'); // Convert to Uri
+    var response = await http.post(url, body: {
       'email': _emailController.text,
       'password': _passwordController.text,
     });
 
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);
-      if (data['status'] == 'SUCCESS') {
+      if (data['success'] == true) {
         // var redirectUrl = data['redirectUrl'];
         // Get.toNamed(redirectUrl); // Navigate to the homepage using GetX
-
+         print(response.body);
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Home()),
