@@ -25,6 +25,7 @@ class _FabTabsState extends State<FabTabs> {
 
   @override
   void initState() {
+
     onItemTapped(widget.selectedIndex);
     super.initState();
   }
