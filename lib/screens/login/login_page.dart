@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:solar_project/screens/home/home.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -16,8 +17,8 @@ class _LoginPageState extends State<LoginPage> {
   bool _isNotValid = false;
 
   Future<void> _login() async {
-    var url = Uri.parse('https://03bb-102-215-57-254.ngrok.io/user-login');
-    var response = await http.post(url, body: {
+    var url = Uri.parse('https://bf6c-102-215-57-254.ngrok.io/user-login'); // Convert to Uri
+    var response = await http.post(url,headers: {'Content-Type': 'application/json'}, body: {
       'email': _emailController.text,
       'password': _passwordController.text,
     });
@@ -25,8 +26,13 @@ class _LoginPageState extends State<LoginPage> {
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);
       if (data['status'] == 'SUCCESS') {
-        var redirectUrl = data['redirectUrl'];
-        Get.toNamed(redirectUrl);
+        // var redirectUrl = data['redirectUrl'];
+        // Get.toNamed(redirectUrl); // Navigate to the homepage using GetX
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Home()),
+        );
       } else {
         setState(() {
           _isNotValid = true;
@@ -137,7 +143,9 @@ class _LoginPageState extends State<LoginPage> {
                             ],
                           ),
                           GestureDetector(
-                            onTap: _login,
+                            onTap: ()async{
+                              await _login();
+                            },
                             child: VxBox(
                               child: "Login"
                                   .text
