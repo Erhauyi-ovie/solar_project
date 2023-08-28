@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:solar_project/screens/drawer/sidemenu.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -25,9 +26,11 @@ class _HomeState extends State<Home> {
       throw Exception('Failed to load data');
     }
   }
+  NumberFormat formatter = NumberFormat("#,##0.00", "en_US");
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         drawer: Sidemenu(),
         appBar: AppBar(
@@ -101,7 +104,7 @@ class _HomeState extends State<Home> {
                                   baselineType: TextBaseline.alphabetic,
                                   child: RichText(
                                     text: TextSpan(
-                                      text: "${data['Temperature']}",
+                                      text:data['Temperature']!=null? "${formatter.format(data['Temperature'])}":"",
                                       style: const TextStyle(
                                         fontSize: 24,
                                         color: Color.fromRGBO(39, 167, 231, 1),
@@ -266,7 +269,7 @@ class _HomeState extends State<Home> {
                                                       RichText(text: TextSpan(
                                                         children: [
                                                           TextSpan(
-                                                            text: "${data['Temperature']}",
+                                                            text: "${formatter.format(data['Battery_Level'])}",
                                                             style: const TextStyle(
                                                               color: Color
                                                                   .fromRGBO(
@@ -274,7 +277,7 @@ class _HomeState extends State<Home> {
                                                                   255,
                                                                   255,
                                                                   1),
-                                                              fontSize: 36,
+                                                              fontSize: 30,
                                                               fontFamily:
                                                               'Inter',
                                                               fontWeight:
@@ -363,9 +366,9 @@ class _HomeState extends State<Home> {
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text: "${data['AC_Reading']}",
+                                  text: "${formatter.format(data['AC_Reading'])}",
                                   style: const TextStyle(
-                                    fontSize: 40,
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
@@ -409,9 +412,9 @@ class _HomeState extends State<Home> {
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text: "${data['Meter_Reading']}",
+                                  text:data['Meter_Reading']!=null? "${formatter.format(data['Meter_Reading'])}":"",
                                   style: const TextStyle(
-                                    fontSize: 40,
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
@@ -419,7 +422,7 @@ class _HomeState extends State<Home> {
                                     const TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: Color.fromRGBO(255, 255, 255, 1),
                                       ),
                                     ),
@@ -458,9 +461,9 @@ class _HomeState extends State<Home> {
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text: "${data['Sun_Intensity']}",
+                                  text: "${formatter.format(data['Sun_Intensity'])}",
                                   style: const TextStyle(
-                                    fontSize: 40,
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
@@ -468,7 +471,7 @@ class _HomeState extends State<Home> {
                                     const TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 16,
                                         color: Color.fromRGBO(255, 255, 255, 1),
                                       ),
                                     ),
