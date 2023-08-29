@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
                                   baselineType: TextBaseline.alphabetic,
                                   child: RichText(
                                     text: TextSpan(
-                                      text:data['Temperature']!=null? "${formatter.format(data['Temperature'])}":"",
+                                      text:data['Temperature']!=null? "${formatter.format(data['Temperature'])}":"0.0",
                                       style: const TextStyle(
                                         fontSize: 24,
                                         color: Color.fromRGBO(39, 167, 231, 1),
@@ -412,14 +412,14 @@ class _HomeState extends State<Home> {
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text:data['Meter_Reading']!=null? "${formatter.format(data['Meter_Reading'])}":"",
+                                  text:data['Meter_Reading']!=null? "${formatter.format(data['Meter_Reading'])}":"0.0",
                                   style: const TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
-                                  children: [
-                                    const TextSpan(
+                                  children: const [
+                                     TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
                                         fontSize: 18,
@@ -467,8 +467,8 @@ class _HomeState extends State<Home> {
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
-                                  children: [
-                                    const TextSpan(
+                                  children:const [
+                                     TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
                                         fontSize: 16,
