@@ -100,11 +100,14 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            child: Text(
-                              "Email",
-                              style:
-                              TextStyle(color: Colors.blue, fontSize: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: const SizedBox(
+                              child: Text(
+                                "Email",
+                                style:
+                                TextStyle(color: Colors.blue, fontSize: 20),
+                              ),
                             ),
                           ),
                           TextFormField(

@@ -18,7 +18,7 @@ class _SignupPageState extends State<SignupPage> {
   Future<void> _signup() async {
     if (_formKey.currentState!.validate()) {
       final response = await http.post(
-        Uri.parse('https://power-mag-sys.onrender.com/api/registerUser'),
+        Uri.parse('https://power-mag-sys.onrender.com/api/users'),
         body: {
           'username': _username,
           'email': _email,
