@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:solar_project/screens/drawer/sidemenu.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -25,19 +26,21 @@ class _HomeState extends State<Home> {
       throw Exception('Failed to load data');
     }
   }
+  NumberFormat formatter = NumberFormat("#,##0.00", "en_US");
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         drawer: Sidemenu(),
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(39, 167, 231, 1),
+          backgroundColor: const Color.fromRGBO(39, 167, 231, 1),
           titleSpacing: 0,
           leading: Builder(
             builder: (context) {
               return IconButton(
                 onPressed: () => Scaffold.of(context).openDrawer(),
-                icon: Icon(Icons.menu, size: 29, color: Colors.white),
+                icon: const Icon(Icons.menu, size: 29, color: Colors.white),
               );
             },
           ),
@@ -52,24 +55,24 @@ class _HomeState extends State<Home> {
             ],
           ),
           actions: [
-            Icon(
+            const Icon(
               Icons.search,
               size: 30,
               color: Colors.white,
             ),
-            SizedBox(width: 10)
+            const SizedBox(width: 10)
           ],
         ),
         body: Container(
           width: 375,
           height: 812,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: FutureBuilder(
               future: fetchTotalDeviceData(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (snapshot.hasError) {
                   return Center(child: Text('Error: ${snapshot.error}'));
                 } else {
@@ -85,14 +88,14 @@ class _HomeState extends State<Home> {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 25,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.cloud_queue,
                                 color: Color.fromRGBO(39, 167, 231, 1),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 116,
                               ),
                               Center(
@@ -101,8 +104,8 @@ class _HomeState extends State<Home> {
                                   baselineType: TextBaseline.alphabetic,
                                   child: RichText(
                                     text: TextSpan(
-                                      text: '32',
-                                      style: TextStyle(
+                                      text:data['Temperature']!=null? "${formatter.format(data['Temperature'])}":"0.0",
+                                      style: const TextStyle(
                                         fontSize: 24,
                                         color: Color.fromRGBO(39, 167, 231, 1),
                                       ),
@@ -110,7 +113,7 @@ class _HomeState extends State<Home> {
                                         WidgetSpan(
                                           child: Transform.translate(
                                             offset: const Offset(0, -8),
-                                            child: Text(
+                                            child: const Text(
                                               '0',
                                               style: TextStyle(
                                                 fontSize: 14,
@@ -121,7 +124,7 @@ class _HomeState extends State<Home> {
                                             ),
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: 'C',
                                           style: TextStyle(
                                             color:
@@ -133,10 +136,10 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 80,
                               ),
-                              Text(
+                              const Text(
                                 'Sunny',
                                 style: TextStyle(
                                   fontSize: 22,
@@ -250,10 +253,10 @@ class _HomeState extends State<Home> {
                                               Positioned(
                                                 left: 5.25,
                                                 top: 56,
-                                                child: Container(
+                                                child:  Container(
                                                   width: 141,
                                                   height: 39,
-                                                  child: const Row(
+                                                  child:  Row(
                                                     mainAxisSize:
                                                         MainAxisSize.min,
                                                     mainAxisAlignment:
@@ -263,63 +266,62 @@ class _HomeState extends State<Home> {
                                                         CrossAxisAlignment
                                                             .center,
                                                     children: [
-                                                      Text.rich(
-                                                        TextSpan(
-                                                          children: [
-                                                            TextSpan(
-                                                              text: '198.8',
-                                                              style: TextStyle(
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        255,
-                                                                        255,
-                                                                        255,
-                                                                        1),
-                                                                fontSize: 36,
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                                      RichText(text: TextSpan(
+                                                        children: [
+                                                          TextSpan(
+                                                            text: "${formatter.format(data['Battery_Level'])}",
+                                                            style: const TextStyle(
+                                                              color: Color
+                                                                  .fromRGBO(
+                                                                  255,
+                                                                  255,
+                                                                  255,
+                                                                  1),
+                                                              fontSize: 30,
+                                                              fontFamily:
+                                                              'Inter',
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w600,
                                                             ),
-                                                            TextSpan(
-                                                              text: ' ',
-                                                              style: TextStyle(
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        39,
-                                                                        167,
-                                                                        231,
-                                                                        1),
-                                                                fontSize: 24,
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                                          ),
+                                                          const TextSpan(
+                                                            text: ' ',
+                                                            style: TextStyle(
+                                                              color: Color
+                                                                  .fromRGBO(
+                                                                  39,
+                                                                  167,
+                                                                  231,
+                                                                  1),
+                                                              fontSize: 24,
+                                                              fontFamily:
+                                                              'Inter',
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w600,
                                                             ),
-                                                            TextSpan(
-                                                              text: 'kwh',
-                                                              style: TextStyle(
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        255,
-                                                                        255,
-                                                                        255,
-                                                                        1),
-                                                                fontSize: 20,
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                                          ),
+                                                          const TextSpan(
+                                                            text: 'kwh',
+                                                            style: TextStyle(
+                                                              color: Color
+                                                                  .fromRGBO(
+                                                                  255,
+                                                                  255,
+                                                                  255,
+                                                                  1),
+                                                              fontSize: 20,
+                                                              fontFamily:
+                                                              'Inter',
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w600,
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
+                                                          ),
+                                                        ],
+                                                      ),)
+
                                                     ],
                                                   ),
                                                 ),
@@ -353,25 +355,25 @@ class _HomeState extends State<Home> {
                           width: 350,
                           child: Column(
                             children: [
-                              Text(
+                              const Text(
                                 'Total Energy Produced',
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: Color.fromRGBO(255, 255, 255, 1)),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text: "${data['AC_Reading']}",
-                                  style: TextStyle(
-                                    fontSize: 40,
+                                  text: "${formatter.format(data['AC_Reading'])}",
+                                  style: const TextStyle(
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
                                   children: [
-                                    TextSpan(
+                                    const TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
                                         fontSize: 20,
@@ -402,25 +404,25 @@ class _HomeState extends State<Home> {
                           width: 170,
                           child: Column(
                             children: [
-                              Text(
-                                "Today's Energy",
+                              const Text(
+                                "Energy Consumed",
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: Color.fromRGBO(255, 255, 255, 1)),
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text: "${data['Battery_Level']}",
-                                  style: TextStyle(
-                                    fontSize: 40,
+                                  text:data['Meter_Reading']!=null? "${formatter.format(data['Meter_Reading'])}":"0.0",
+                                  style: const TextStyle(
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
-                                  children: [
-                                    TextSpan(
+                                  children: const [
+                                     TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: Color.fromRGBO(255, 255, 255, 1),
                                       ),
                                     ),
@@ -448,28 +450,28 @@ class _HomeState extends State<Home> {
                           width: 170,
                           child: Column(
                             children: [
-                              Text(
-                                "Energy Intensity",
+                              const Text(
+                                "Light Intensity",
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: Color.fromRGBO(255, 255, 255, 1)),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               RichText(
                                 text: TextSpan(
-                                  text: "${data['Sun_Intensity']}",
-                                  style: TextStyle(
-                                    fontSize: 40,
+                                  text: "${formatter.format(data['Sun_Intensity'])}",
+                                  style: const TextStyle(
+                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
                                     color: Color.fromRGBO(255, 255, 255, 1),
                                   ),
-                                  children: [
-                                    TextSpan(
+                                  children:const [
+                                     TextSpan(
                                       text: 'kwh',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 16,
                                         color: Color.fromRGBO(255, 255, 255, 1),
                                       ),
                                     ),
