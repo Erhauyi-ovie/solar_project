@@ -93,41 +93,50 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding:
-                         EdgeInsets.only(left: 40.sw, right: 40.sw, top: 40.sh),
+                    padding:EdgeInsets.only(left: 40.sw, right: 40.sw, top: 40.sh),
+
                     child: Form(
                       // key: _formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                           SizedBox(
+
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12),
+                            child: SizedBox(
                             child: Text(
                               "Email",
                               style:
                                   TextStyle(color: Colors.blue, fontSize: 20.sp),
                             ),
-                          ),
-                          TextFormField(
-                            controller: _emailController,
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              errorStyle: const TextStyle(color: Colors.white),
-                              errorText:
+                          ),),
+                              TextFormField(
+                                controller: _emailController,
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  errorStyle: const TextStyle(color: Colors.white),
+                                  errorText:
                                   _isNotValid ? "Enter proper Info" : null,
-                              hintText: "Enter Email",
-                              border: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
+                                  hintText: "Enter Email",
+                                  border: const OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.emailAddress,
+                              ).p4().px12(),
+                              const SizedBox(
+                                height: 20,
                               ),
-                            ),
-                            keyboardType: TextInputType.emailAddress,
-                          ).p4().px12(),
                           const SizedBox(
                             height: 20,
                           ),
-                          const Text(
-                            "Password",
-                            style: TextStyle(color: Colors.blue, fontSize: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(left:12),
+                            child: const Text(
+                              "Password",
+                              style: TextStyle(color: Colors.blue, fontSize: 20),
+                            ),
                           ),
                           TextFormField(
                             controller: _passwordController,
@@ -136,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                               fillColor: Colors.white,
                               errorStyle: const TextStyle(color: Colors.white),
                               errorText:
-                                  _isNotValid ? "Enter proper Info" : null,
+                              _isNotValid ? "Enter proper Info" : null,
                               hintText: "Enter Password",
                               border: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.blue),
