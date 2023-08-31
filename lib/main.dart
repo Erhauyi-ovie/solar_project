@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solar_project/screens/bottomTabBar/FabTabs.dart';
 import 'package:solar_project/screens/login/login_page.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'screens/splash_screen/splash_screen.dart';
 
 void main() {
@@ -20,7 +20,14 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: SplashScreen()
-      home: LoginPage(),
+      home: ScreenUtilInit(
+          designSize: const Size(360, 690),
+          minTextAdapt: true,
+          splitScreenMode: true,
+        builder: (_,child) {
+          return LoginPage();
+        }
+      ),
         // FabTabs(selectedIndex: 0,)
 
     );

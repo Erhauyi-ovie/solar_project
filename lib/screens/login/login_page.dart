@@ -8,7 +8,7 @@ import 'package:solar_project/screens/home/home.dart';
 import 'package:solar_project/screens/login/signup.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     width: size.width * 1,
-                    height: 280,
+                    height: 280.sp,
                     child: FittedBox(
                       fit: BoxFit.cover,
                       child: Image.asset("assets/images/solar.jpg"),
@@ -94,17 +94,17 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(left: 40, right: 40, top: 40),
+                         EdgeInsets.only(left: 40.sw, right: 40.sw, top: 40.sh),
                     child: Form(
                       // key: _formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
+                           SizedBox(
                             child: Text(
                               "Email",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 20),
+                                  TextStyle(color: Colors.blue, fontSize: 20.sp),
                             ),
                           ),
                           TextFormField(
