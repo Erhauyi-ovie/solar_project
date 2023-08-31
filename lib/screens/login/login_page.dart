@@ -8,7 +8,7 @@ import 'package:solar_project/screens/home/home.dart';
 import 'package:solar_project/screens/login/signup.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -86,45 +86,48 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     width: size.width * 1,
-                    height: 280,
+                    height: 280.sp,
                     child: FittedBox(
                       fit: BoxFit.cover,
                       child: Image.asset("assets/images/solar.jpg"),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 40, right: 40, top: 40),
+                    padding:EdgeInsets.only(left: 40.sw, right: 40.sw, top: 40.sh),
+
                     child: Form(
                       // key: _formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+
                           Padding(
                             padding: const EdgeInsets.only(left: 12),
-                            child: const SizedBox(
-                              child: Text(
-                                "Email",
-                                style:
-                                TextStyle(color: Colors.blue, fontSize: 20),
-                              ),
+                            child: SizedBox(
+                            child: Text(
+                              "Email",
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 20.sp),
                             ),
-                          ),
-                          TextFormField(
-                            controller: _emailController,
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              errorStyle: const TextStyle(color: Colors.white),
-                              errorText:
-                              _isNotValid ? "Enter proper Info" : null,
-                              hintText: "Enter Email",
-                              border: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
+                          ),),
+                              TextFormField(
+                                controller: _emailController,
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  errorStyle: const TextStyle(color: Colors.white),
+                                  errorText:
+                                  _isNotValid ? "Enter proper Info" : null,
+                                  hintText: "Enter Email",
+                                  border: const OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.emailAddress,
+                              ).p4().px12(),
+                              const SizedBox(
+                                height: 20,
                               ),
-                            ),
-                            keyboardType: TextInputType.emailAddress,
-                          ).p4().px12(),
                           const SizedBox(
                             height: 20,
                           ),

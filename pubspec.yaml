@@ -22,6 +22,8 @@ dependencies:
   provider:
   fl_chart:
   intl:
+  flutter_screenutil: ^5.9.0
+
 
 
 
