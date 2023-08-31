@@ -101,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 12),
                             child: const SizedBox(
                               child: Text(
                                 "Email",
@@ -128,9 +128,12 @@ class _LoginPageState extends State<LoginPage> {
                           const SizedBox(
                             height: 20,
                           ),
-                          const Text(
-                            "Password",
-                            style: TextStyle(color: Colors.blue, fontSize: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(left:12),
+                            child: const Text(
+                              "Password",
+                              style: TextStyle(color: Colors.blue, fontSize: 20),
+                            ),
                           ),
                           TextFormField(
                             controller: _passwordController,
