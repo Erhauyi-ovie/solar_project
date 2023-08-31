@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Login successful',style:TextStyle(color: Colors.white)),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.blue,
             duration: Duration(seconds: 2),
           ),
         );
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   Container(
-                    width: size.width * 1,
+                    width: size.width * 1.sp,
                     height: 280.sp,
                     child: FittedBox(
                       fit: BoxFit.cover,
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding:EdgeInsets.only(left: 40.sw, right: 40.sw, top: 40.sh),
+                    padding:EdgeInsets.only(left: 40.sp, right: 40.sp, top: 40.sp),
 
                     child: Form(
                       // key: _formKey,
