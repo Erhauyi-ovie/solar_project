@@ -19,9 +19,11 @@ class Sidemenu extends StatelessWidget {
             Container(
               height: 250,
               child: DrawerHeader(
-                child: Text(
-                  'PRICE',
-                  style: TextStyle(color: Color.fromRGBO(255, 255, 0, 1), fontSize: 25), // Yellow text
+                child: Container(
+                  child: Text(
+                    'PRICE',
+                    style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold), // Yellow text
+                  ),
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -57,10 +59,10 @@ class Sidemenu extends StatelessWidget {
             buildDrawerItem("Profile", Icons.person_outline, () {
               Get.to(() => Profile());
             }),
-            buildDrawerItem("Signup", Icons.login_outlined, () {
-              Get.to(() => SignupPage());
-            }),
-            buildDrawerItem("Login", Icons.login_outlined, () {
+            // buildDrawerItem("Signup", Icons.login_outlined, () {
+            //   Get.to(() => SignupPage());
+            // }),
+            buildDrawerItem("Logout", Icons.login_outlined, () {
               Get.to(() => LoginPage());
             }),
           ],

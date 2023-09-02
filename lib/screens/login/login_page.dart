@@ -156,36 +156,47 @@ class _LoginPageState extends State<LoginPage> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 10, bottom: 10),
-                                child: Text(
-                                  'Forgot Password?',
-                                  style: TextStyle(
-                                      color: Colors.blue, fontSize: 20),
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.only(left:30),
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text.rich(
+                                  TextSpan(
+                                      children: [
+                                        TextSpan(text: 'Forgot Password?  ',style: TextStyle(color: Colors.black)),
+                                        TextSpan(text: 'Contact Admin',style: TextStyle(color: Colors.blue))
+                                      ]
+                                  )
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10),
-                                child: Text(
-                                  'Contact Admin',
-                                  style: TextStyle(
-                                      color: Colors.blue, fontSize: 20),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 14),
+                            child: Container(
+                              width: 275,
+                              height: 60,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
                                 ),
+                                child: Text('Login', style: TextStyle(color: Colors.white),),
                               ),
-                            ],
+                            ),
                           ),
-                          GestureDetector(
-                            onTap: () async {
-                              await _login();
-                            },
-                            child: VxBox(
-                              child: "Login".text.xl.white.makeCentered().p16(),
-                            ).green600.rounded.make().px24().py20(),
-                          ),
+                          // GestureDetector(
+                          //   onTap: () async {
+                          //     await _login();
+                          //   },
+                          //   child: VxBox(
+                          //     child: "Login".text.xl.white.makeCentered().p16(),
+                          //   ).green600.rounded.make().px24().py20(),
+                          // ),
                           const SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

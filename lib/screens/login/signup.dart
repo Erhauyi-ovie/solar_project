@@ -166,16 +166,22 @@ class _SignupPageState extends State<SignupPage> {
                         const SizedBox(
                           height: 10,
                         ),
-                        GestureDetector(
-                          onTap: _signup,
-                          child: VxBox(
-                            child: "Register".text.xl.white.makeCentered().p16(),
-                          )
-                              .green600
-                              .rounded
-                              .make()
-                              .px24()
-                              .py20(),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 14),
+                          child: Container(
+                            width: 285,
+                            height: 60,
+                            child: ElevatedButton(
+                              onPressed: _signup,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.blue,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              child: Text('Signup', style: TextStyle(color: Colors.white),),
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 20,
