@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Login successful',style:TextStyle(color: Colors.white)),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.blue,
             duration: Duration(seconds: 2),
           ),
         );
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   Container(
-                    width: size.width * 1,
+                    width: size.width * 1.sp,
                     height: 280.sp,
                     child: FittedBox(
                       fit: BoxFit.cover,
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding:EdgeInsets.only(left: 40.sw, right: 40.sw, top: 40.sh),
+                    padding:EdgeInsets.only(left: 40.sp, right: 40.sp, top: 40.sp),
 
                     child: Form(
                       // key: _formKey,
@@ -156,36 +156,47 @@ class _LoginPageState extends State<LoginPage> {
                           const SizedBox(
                             height: 10,
                           ),
-                          const Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 10, bottom: 10),
-                                child: Text(
-                                  'Forgot Password?',
-                                  style: TextStyle(
-                                      color: Colors.blue, fontSize: 20),
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.only(left:30),
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text.rich(
+                                  TextSpan(
+                                      children: [
+                                        TextSpan(text: 'Forgot Password?  ',style: TextStyle(color: Colors.black)),
+                                        TextSpan(text: 'Contact Admin',style: TextStyle(color: Colors.blue))
+                                      ]
+                                  )
                               ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10),
-                                child: Text(
-                                  'Contact Admin',
-                                  style: TextStyle(
-                                      color: Colors.blue, fontSize: 20),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 14),
+                            child: Container(
+                              width: 275,
+                              height: 60,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
                                 ),
+                                child: Text('Login', style: TextStyle(color: Colors.white),),
                               ),
-                            ],
+                            ),
                           ),
-                          GestureDetector(
-                            onTap: () async {
-                              await _login();
-                            },
-                            child: VxBox(
-                              child: "Login".text.xl.white.makeCentered().p16(),
-                            ).green600.rounded.make().px24().py20(),
-                          ),
+                          // GestureDetector(
+                          //   onTap: () async {
+                          //     await _login();
+                          //   },
+                          //   child: VxBox(
+                          //     child: "Login".text.xl.white.makeCentered().p16(),
+                          //   ).green600.rounded.make().px24().py20(),
+                          // ),
                           const SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
